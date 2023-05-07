@@ -120,5 +120,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]# https://docs.djangoproject
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

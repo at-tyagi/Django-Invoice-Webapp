@@ -7,6 +7,6 @@ urlpatterns = [
     path('index',views.index,name='index'),
     path('buy/<int:pk>/',views.buy,name='buy'),
     path('pdf/',views.pdf,name='pdf'),
-    path('clear',views.clear_buyers,name='clear'),
+    path('add',views.add,name='add'),
     path('list',views.list,name='list'),
 ]

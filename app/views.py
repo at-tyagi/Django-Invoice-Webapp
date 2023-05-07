@@ -71,11 +71,18 @@ def pdf(request):
     return render(request,'pdf.html',{'seller':slr})
 
 @login_required(login_url='/login')
-def clear_buyers(request):
-    buyer.objects.all().delete()
-    pro = producat.objects.all()
-    slr = seller.objects.all()
-    return render(request,'list.html',{'products':pro,'seller':slr})
+def add(request):
+    if request.method == "POST":
+        img = request.POST['name']
+        pk = request.POST['pk']
+        name = request.POST['address']
+        dis = request.POST['phone']
+        price = int(request.POST['quantity'])
+        pro = producat(img=img,pk=pk,name=name,dis=dis,price=price)
+        pro.save()
+        return HttpResponseRedirect('/index')
+    
+    return render(request,'add.html')
 
 @login_required(login_url='/login')
 def list(request):
