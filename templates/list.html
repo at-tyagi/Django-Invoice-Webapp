@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+</style>
+<h1>Buyers List</h1>
+{% if buyers %}
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Purchase Date</th>
+    </thead>
+    {% for b in buyers %}
+        <tr>
+          <td>{{ b.name }}</td>
+          <td>{{ b.address }}</td>
+          <td>{{ b.phone }}</td>
+          <td>{{ b.purchase_date }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  No data to show
+  {% endif %}
+{% endblock %}
+
+
+
+
